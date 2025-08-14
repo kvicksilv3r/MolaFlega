@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
 	public RawImage targetImage;
 
+	public Slider thicknessSlider;
+
 	public static GameManager Instance;
 
 	private void Awake()
@@ -137,5 +139,10 @@ public class GameManager : MonoBehaviour
 		float matchPercent = (float)matches / (float)totalPixels;
 
 		print($"The images were {Mathf.Round(matchPercent * 100)}% similar. Sheesh");
+	}
+
+	public void ThicknessSliderChanged()
+	{
+		painter.SetBrushThickness((int)thicknessSlider.value);
 	}
 }

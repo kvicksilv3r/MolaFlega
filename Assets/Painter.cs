@@ -91,13 +91,13 @@ public class Painter : MonoBehaviour
 
 				if (heldMouseButtonLastFrame)
 				{
-					var magnitude = (int)((lastHitCoord - hit.textureCoord).magnitude);
-
+					var magnitude = (int)(((lastHitCoord - hit.textureCoord) * 100).magnitude);
+					print(magnitude);
 					for (int i = 0; i < magnitude; i++)
 					{
 						var lerpedHit = Vector2.Lerp(lastHitCoord, hit.textureCoord, (float)i / (float)magnitude);
-						var x = (int)lerpedHit.x * textureWidth;
-						var y = (int)lerpedHit.y * textureHeight;
+						var x = (int)(lerpedHit.x * textureWidth);
+						var y = (int)(lerpedHit.y * textureHeight);
 						PaintPixels(x, y);
 					}
 				}
@@ -116,6 +116,11 @@ public class Painter : MonoBehaviour
 	{
 		testTexture.Circle(xCoord, yCoord, paintThickness, paintColor);
 		testTexture.Apply();
+	}
+
+	public void SetBrushThickness(int thickness)
+	{
+		paintThickness = thickness;
 	}
 
 	private void AssignTexture()
