@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f022c41d78035e0409d57515f9a8ded1, type: 3}
+  m_Name: LT
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 0.75686276, g: 0.15294118, b: 0.1764706, a: 1}
+  - {r: 0, g: 0.41568628, b: 0.26666668, a: 1}
+  - {r: 0.99215686, g: 0.7254902, b: 0.07450981, a: 1}
+  visualFlag: {fileID: 2800000, guid: e4c77ad6440129645a6157fe8faacb4e, type: 3}
+  countryName: Lithuania
