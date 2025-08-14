@@ -16,5 +16,6 @@ MonoBehaviour:
   - {r: 0.1882353, g: 0.14901961, b: 0.5058824, a: 1}
   - {r: 1, g: 0.79607844, b: 0, a: 1}
   - {r: 0, g: 0.5803922, b: 0.2509804, a: 1}
-  flag: {fileID: 2800000, guid: 883f9cdccd9dd53429a427d75274472c, type: 3}
+  comparisonFlag: {fileID: 2800000, guid: 883f9cdccd9dd53429a427d75274472c, type: 3}
+  visualFlag: {fileID: 2800000, guid: be428ce0682d02048bdf087e970acb6b, type: 3}
   countryName: Brazil

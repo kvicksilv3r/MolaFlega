@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
 	public void CompareFlags()
 	{
 		var a = painter.testTexture;
-		var b = currentContext.comparisonFlag;
+		var b = currentContext.visualFlag;
 
 		if (a.width != b.width)
 		{
