@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -7,8 +6,11 @@ public class GameManager : MonoBehaviour
 {
 	public FlagContext currentContext;
 	public Transform buttonHolster;
+	public GameObject resultsHolster;
 
 	public TextMeshProUGUI countryNameTMP;
+	public TextMeshProUGUI resultsTextTMP;
+
 	public Painter painter;
 
 	public RawImage targetImage;
@@ -16,6 +18,10 @@ public class GameManager : MonoBehaviour
 	public Slider thicknessSlider;
 
 	public static GameManager Instance;
+
+	private FlagContext[] contextDB;
+
+	public int similarityPercent;
 
 	private void Awake()
 	{
@@ -33,19 +39,25 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		painter.InitPainter(300, 200);
+		LoadResources();
 	}
 
 	public void Setup(FlagContext context)
 	{
 		SetupButtons();
-		SetTargetImage();
 		ClearCanvas();
+		HideResults();
 		SetText(context.countryName);
+	}
+
+	private void HideResults()
+	{
+		resultsHolster.SetActive(false);
 	}
 
 	private void SetTargetImage()
 	{
-		targetImage.texture = currentContext.flag;
+		targetImage.texture = currentContext.visualFlag;
 	}
 
 	private void SetText(string countryName)
@@ -53,9 +65,27 @@ public class GameManager : MonoBehaviour
 		countryNameTMP.text = countryName;
 	}
 
+	public void DonePainting()
+	{
+		CompareFlags();
+		SetTargetImage();
+		DisplayResults();
+	}
+
+	private void DisplayResults()
+	{
+		resultsHolster.SetActive(true);
+		resultsTextTMP.text = $"{similarityPercent}%";
+	}
+
 	internal void UpdateColor(Color color)
 	{
 		painter.SetColor(color);
+	}
+
+	private void LoadResources()
+	{
+		contextDB = Resources.LoadAll<FlagContext>("FlagObjects");
 	}
 
 	private void SetupButtons()
@@ -85,6 +115,12 @@ public class GameManager : MonoBehaviour
 		painter.ClearCanvas();
 	}
 
+	public void NewRound()
+	{
+		LoadRandomFlag();
+		Setup(currentContext);
+	}
+
 	public void ManualSetup()
 	{
 		if (!currentContext)
@@ -97,13 +133,13 @@ public class GameManager : MonoBehaviour
 
 	public void LoadRandomFlag()
 	{
-
+		currentContext = contextDB[Random.Range(0, contextDB.Length)];
 	}
 
 	public void CompareFlags()
 	{
 		var a = painter.testTexture;
-		var b = currentContext.flag;
+		var b = currentContext.comparisonFlag;
 
 		if (a.width != b.width)
 		{
@@ -137,8 +173,8 @@ public class GameManager : MonoBehaviour
 
 		var totalPixels = a.width * a.height;
 		float matchPercent = (float)matches / (float)totalPixels;
-
-		print($"The images were {Mathf.Round(matchPercent * 100)}% similar. Sheesh");
+		similarityPercent = (int)Mathf.Round(matchPercent * 100);
+		print($"The images were {similarityPercent}% similar. Sheesh");
 	}
 
 	public void ThicknessSliderChanged()

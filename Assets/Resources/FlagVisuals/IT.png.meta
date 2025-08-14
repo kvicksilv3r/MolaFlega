@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 5dc177a06e06d9d45a5d8bc91ff80b88
+guid: 19fba2fc8bb4e5f4f9251e308bc552ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7413957106371234572
-    second: FlagFr300200_0
+      213: 4184993280261914206
+    second: IT_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FlagFr300200_0
+      name: IT_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f472c6ea455c1990800000000000000
-      internalID: -7413957106371234572
+      spriteID: e5e78612735141a30800000000000000
+      internalID: 4184993280261914206
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FlagFr300200_0: -7413957106371234572
+      IT_0: 4184993280261914206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
