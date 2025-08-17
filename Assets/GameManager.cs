@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 	public TextMeshProUGUI countryNameTMP;
 	public TextMeshProUGUI resultsTextTMP;
 
+	public GameObject resultsImage;
+
 	public Painter painter;
 
 	public RawImage targetImage;
@@ -20,6 +22,15 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance;
 
 	private FlagContext[] contextDB;
+
+	public Transform thicknessPreview;
+
+	private float thicknessMaxSize = 0.7f;
+
+	public GameObject donePaintingButton;
+	public GameObject nextRoundButton;
+
+	public GameObject interactionsHolster;
 
 	public int similarityPercent;
 
@@ -53,6 +64,7 @@ public class GameManager : MonoBehaviour
 	private void HideResults()
 	{
 		resultsHolster.SetActive(false);
+		resultsImage.SetActive(false);
 	}
 
 	private void SetTargetImage()
@@ -70,12 +82,16 @@ public class GameManager : MonoBehaviour
 		CompareFlags();
 		SetTargetImage();
 		DisplayResults();
+		donePaintingButton.SetActive(false);
+		nextRoundButton.SetActive(true);
 	}
 
 	private void DisplayResults()
 	{
 		resultsHolster.SetActive(true);
 		resultsTextTMP.text = $"{similarityPercent}%";
+		resultsImage.SetActive(true);
+		interactionsHolster.SetActive(false);
 	}
 
 	internal void UpdateColor(Color color)
@@ -119,6 +135,9 @@ public class GameManager : MonoBehaviour
 	{
 		LoadRandomFlag();
 		Setup(currentContext);
+		interactionsHolster.SetActive(true);
+		donePaintingButton.SetActive(true);
+		nextRoundButton.SetActive(false);
 	}
 
 	public void ManualSetup()
@@ -180,5 +199,12 @@ public class GameManager : MonoBehaviour
 	public void ThicknessSliderChanged()
 	{
 		painter.SetBrushThickness((int)thicknessSlider.value);
+		SetThicknessPreview();
+	}
+
+	private void SetThicknessPreview()
+	{
+		var newSize = thicknessMaxSize * (thicknessSlider.value / thicknessSlider.maxValue);
+		thicknessPreview.localScale = new Vector3(newSize, newSize, 1);
 	}
 }
