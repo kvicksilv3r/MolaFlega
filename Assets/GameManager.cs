@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     public Transform thicknessPreview;
 
-    private float thicknessMaxSize = 0.7f;
+    public float thicknessMaxSize = 0.5f;
 
     public GameObject donePaintingButton;
     public GameObject nextRoundButton;
@@ -222,6 +222,11 @@ public class GameManager : MonoBehaviour
         lastFlagID = rngFlagIndex;
 
         return rngFlagIndex;
+    }
+
+    public void SkipRound()
+    {
+        NewRound();
     }
 
     public void CompareFlags()

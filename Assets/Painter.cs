@@ -12,9 +12,6 @@ public class Painter : MonoBehaviour
 
     public Stack<Texture2D> paintStack = new Stack<Texture2D>();
 
-    //debug
-    public List<Texture2D> debugList = new List<Texture2D>();
-
     public int textureWidth = 300;
     public int textureHeight = 200;
 
@@ -49,6 +46,8 @@ public class Painter : MonoBehaviour
         planeMat = planeRenderer.material;
         CreateTexture();
         AssignTexture();
+        ClearCanvas();
+        NewPainting();
     }
 
     void Update()
@@ -181,8 +180,6 @@ public class Painter : MonoBehaviour
         newTexture.CopyPixels(mainPaintTexture);
         newTexture.Apply();
         paintStack.Push(newTexture);
-
-        debugList.Add(newTexture);
     }
 
     public void PopPaintStack()
@@ -192,15 +189,12 @@ public class Painter : MonoBehaviour
             paintStack.Pop();
             mainPaintTexture.CopyPixels(paintStack.Peek());
             mainPaintTexture.Apply();
-
-            debugList.RemoveAt(debugList.Count - 1);
         }
     }
 
     private void ClearPaintStack()
     {
         paintStack.Clear();
-        debugList.Clear();
     }
 
     public int GetPaintStackSize()
