@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
 
     public int similarityPercent;
 
+    public bool forceLoadCountryButton = false;
+    public FlagContext manualCountrySelection;
+
     private void Awake()
     {
         if (!Instance)
@@ -290,5 +293,23 @@ public class GameManager : MonoBehaviour
     {
         var newSize = thicknessMaxSize * (thicknessSlider.value / thicknessSlider.maxValue);
         thicknessPreview.localScale = new Vector3(newSize, newSize, 1);
+    }
+
+    private void OnValidate()
+    {
+        if (forceLoadCountryButton && manualCountrySelection != null)
+        {
+            forceLoadCountryButton = false;
+
+            currentContext = manualCountrySelection;
+
+            SetCanvasPhysicalSize();
+            SetResultsPhysicalSize();
+
+            Setup(currentContext);
+            interactionsHolster.SetActive(true);
+            donePaintingButton.SetActive(true);
+            nextRoundButton.SetActive(false);
+        }
     }
 }
