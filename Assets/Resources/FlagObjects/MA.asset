@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f022c41d78035e0409d57515f9a8ded1, type: 3}
+  m_Name: MA
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 0.7568628, g: 0.15294118, b: 0.1764706, a: 1}
+  - {r: 0.003921569, g: 0.38431376, b: 0.20000002, a: 1}
+  visualFlag: {fileID: 2800000, guid: 8785c0fa8cf8a25448465707f9acba0f, type: 3}
+  countryName: Morocco

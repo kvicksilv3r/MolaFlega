@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LT
   m_EditorClassIdentifier: 
   colors:
-  - {r: 0.75686276, g: 0.15294118, b: 0.1764706, a: 1}
-  - {r: 0, g: 0.41568628, b: 0.26666668, a: 1}
   - {r: 0.99215686, g: 0.7254902, b: 0.07450981, a: 1}
+  - {r: 0, g: 0.41568628, b: 0.26666668, a: 1}
+  - {r: 0.75686276, g: 0.15294118, b: 0.1764706, a: 1}
   visualFlag: {fileID: 2800000, guid: e4c77ad6440129645a6157fe8faacb4e, type: 3}
   countryName: Lithuania

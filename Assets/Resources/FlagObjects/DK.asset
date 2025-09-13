@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DK
   m_EditorClassIdentifier: 
   colors:
-  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.7843138, g: 0.0627451, b: 0.18039216, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: f0f1edf4ebd97f14f8394e484e7fe962, type: 3}
   countryName: Denmark

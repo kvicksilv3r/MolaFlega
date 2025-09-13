@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BE
   m_EditorClassIdentifier: 
   colors:
-  - {r: 0.9921569, g: 0.854902, b: 0.14509805, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0.9921569, g: 0.854902, b: 0.14509805, a: 1}
   - {r: 0.93725497, g: 0.20000002, b: 0.2509804, a: 1}
   visualFlag: {fileID: 2800000, guid: 2f0c48034538634419a3aea9077359f7, type: 3}
   countryName: Belgium

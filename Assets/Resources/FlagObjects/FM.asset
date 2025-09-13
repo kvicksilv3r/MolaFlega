@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FM
   m_EditorClassIdentifier: 
   colors:
-  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.45882356, g: 0.69803923, b: 0.86666673, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: c165c67da230660409d5df489058453b, type: 3}
   countryName: Micronesia

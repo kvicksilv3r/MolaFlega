@@ -16,5 +16,5 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 1}
   - {r: 0.8000001, g: 0.03529412, b: 0.18431373, a: 1}
   - {r: 1, g: 0.7960785, b: 0, a: 1}
-  visualFlag: {fileID: 0}
+  visualFlag: {fileID: 2800000, guid: 04e82b84ba3dfd340a5b8a4195b2db56, type: 3}
   countryName: Angola

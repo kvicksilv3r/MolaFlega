@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: IT
   m_EditorClassIdentifier: 
   colors:
-  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0, g: 0.57254905, b: 0.27450982, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.80784315, g: 0.16862746, b: 0.21568628, a: 1}
-  comparisonFlag: {fileID: 2800000, guid: 19fba2fc8bb4e5f4f9251e308bc552ea, type: 3}
   visualFlag: {fileID: 2800000, guid: 71b561515221de74da5fbac20d1d28df, type: 3}
   countryName: Italy
