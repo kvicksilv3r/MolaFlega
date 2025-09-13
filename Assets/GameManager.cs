@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -238,6 +239,7 @@ public class GameManager : MonoBehaviour
         }
 
         int matches = 0;
+        int badPixels = 0;
         Color aColor;
         Color bColor;
 
@@ -252,10 +254,27 @@ public class GameManager : MonoBehaviour
                 {
                     matches++;
                 }
+                else
+                {
+                    var targetPixel = b.GetPixel(width, height);
+                    var colorMatch = 0;
+                    for (int x = 0; x < currentContext.colors.Length; x++)
+                    {
+                        if (currentContext.colors[x] == targetPixel)
+                        {
+                            colorMatch++;
+                        }
+                    }
+
+                    if (colorMatch == 0)
+                    {
+                        badPixels++;
+                    }
+                }
             }
         }
 
-        var totalPixels = a.width * a.height;
+        var totalPixels = (a.width * a.height) - badPixels;
         float matchPercent = (float)matches / (float)totalPixels;
         similarityPercent = (int)Mathf.Round(matchPercent * 100);
         print($"The images were {similarityPercent}% similar. Sheesh");
