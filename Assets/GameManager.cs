@@ -32,7 +32,18 @@ public class GameManager : MonoBehaviour
 
     public GameObject interactionsHolster;
 
+    public float canvasRefWidth;
+    public float canvasRefHeight;
+
+    public float resultRefWidth;
+    public float resultRefHeight;
+
+    public float intendedFlagWidth = 300;
+    public float intendedFlagHeight = 200;
+
     public Button undoButton;
+
+    public GameObject paintCanvas;
 
     private int lastFlagID = 999999;
 
@@ -60,7 +71,7 @@ public class GameManager : MonoBehaviour
     public void Setup(FlagContext context)
     {
         SetupButtons();
-        NewCanvas();
+        painter.InitPainter(context.visualFlag.width, context.visualFlag.height);
         HideResults();
         SetText(context.countryName);
     }
@@ -153,11 +164,33 @@ public class GameManager : MonoBehaviour
     public void NewRound()
     {
         LoadRandomFlag();
+
+        SetCanvasPhysicalSize();
+        SetResultsPhysicalSize();
+
         Setup(currentContext);
         interactionsHolster.SetActive(true);
         donePaintingButton.SetActive(true);
         nextRoundButton.SetActive(false);
     }
+
+
+    private void SetCanvasPhysicalSize()
+    {
+        var width = currentContext.visualFlag.width * (canvasRefWidth / intendedFlagWidth);
+        var height = currentContext.visualFlag.height * (canvasRefHeight / intendedFlagHeight);
+
+        paintCanvas.transform.localScale = new Vector3(width, 1, height);
+    }
+
+    private void SetResultsPhysicalSize()
+    {
+        var width = currentContext.visualFlag.width * (resultRefWidth / intendedFlagWidth);
+        var height = currentContext.visualFlag.height * (resultRefHeight / intendedFlagHeight);
+
+        resultsImage.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
+    }
+
 
     public void ManualSetup()
     {

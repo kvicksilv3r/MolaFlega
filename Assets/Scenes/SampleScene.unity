@@ -372,7 +372,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1268577470}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: UndoPaint
+        m_MethodName: ClearCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 614895430}
   - component: {fileID: 614895429}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: PaintingPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3012,7 +3012,14 @@ MonoBehaviour:
   donePaintingButton: {fileID: 1509085520}
   nextRoundButton: {fileID: 961457887}
   interactionsHolster: {fileID: 949182217}
+  canvasRefWidth: 0.4
+  canvasRefHeight: 0.27
+  resultRefWidth: 4
+  resultRefHeight: 2.66
+  intendedFlagWidth: 300
+  intendedFlagHeight: 200
   undoButton: {fileID: 1330494359}
+  paintCanvas: {fileID: 614895428}
   similarityPercent: 0
 --- !u!4 &1268577471
 Transform:
@@ -3223,7 +3230,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.00693, y: -0.72}
-  m_SizeDelta: {x: 4, y: 2.7}
+  m_SizeDelta: {x: 4, y: 2.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280393499
 MonoBehaviour:
