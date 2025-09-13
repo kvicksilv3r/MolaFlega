@@ -4,207 +4,239 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-	public FlagContext currentContext;
-	public Transform buttonHolster;
-	public GameObject resultsHolster;
+    public FlagContext currentContext;
+    public Transform buttonHolster;
+    public GameObject resultsHolster;
 
-	public TextMeshProUGUI countryNameTMP;
-	public TextMeshProUGUI resultsTextTMP;
+    public TextMeshProUGUI countryNameTMP;
+    public TextMeshProUGUI resultsTextTMP;
 
-	public GameObject resultsImage;
+    public GameObject resultsImage;
 
-	public Painter painter;
+    public Painter painter;
 
-	public RawImage targetImage;
+    public RawImage targetImage;
 
-	public Slider thicknessSlider;
+    public Slider thicknessSlider;
 
-	public static GameManager Instance;
+    public static GameManager Instance;
 
-	private FlagContext[] contextDB;
+    private FlagContext[] contextDB;
 
-	public Transform thicknessPreview;
+    public Transform thicknessPreview;
 
-	private float thicknessMaxSize = 0.7f;
+    private float thicknessMaxSize = 0.7f;
 
-	public GameObject donePaintingButton;
-	public GameObject nextRoundButton;
+    public GameObject donePaintingButton;
+    public GameObject nextRoundButton;
 
-	public GameObject interactionsHolster;
+    public GameObject interactionsHolster;
 
-	public int similarityPercent;
+    public Button undoButton;
 
-	private void Awake()
-	{
-		if (!Instance)
-		{
-			Instance = this;
-		}
+    private int lastFlagID = 999999;
 
-		if (Instance != this)
-		{
-			Destroy(this);
-		}
-	}
+    public int similarityPercent;
 
-	void Start()
-	{
-		painter.InitPainter(300, 200);
-		LoadResources();
-	}
+    private void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+        }
 
-	public void Setup(FlagContext context)
-	{
-		SetupButtons();
-		ClearCanvas();
-		HideResults();
-		SetText(context.countryName);
-	}
+        if (Instance != this)
+        {
+            Destroy(this);
+        }
+    }
 
-	private void HideResults()
-	{
-		resultsHolster.SetActive(false);
-		resultsImage.SetActive(false);
-	}
+    void Start()
+    {
+        painter.InitPainter(300, 200);
+        LoadResources();
+    }
 
-	private void SetTargetImage()
-	{
-		targetImage.texture = currentContext.visualFlag;
-	}
+    public void Setup(FlagContext context)
+    {
+        SetupButtons();
+        NewCanvas();
+        HideResults();
+        SetText(context.countryName);
+    }
 
-	private void SetText(string countryName)
-	{
-		countryNameTMP.text = countryName;
-	}
+    private void HideResults()
+    {
+        resultsHolster.SetActive(false);
+        resultsImage.SetActive(false);
+    }
 
-	public void DonePainting()
-	{
-		CompareFlags();
-		SetTargetImage();
-		DisplayResults();
-		donePaintingButton.SetActive(false);
-		nextRoundButton.SetActive(true);
-	}
+    public void UndoPaint()
+    {
+        painter.PopPaintStack();
+    }
 
-	private void DisplayResults()
-	{
-		resultsHolster.SetActive(true);
-		resultsTextTMP.text = $"{similarityPercent}%";
-		resultsImage.SetActive(true);
-		interactionsHolster.SetActive(false);
-	}
+    public void NewCanvas()
+    {
+        painter.NewPainting();
+    }
 
-	internal void UpdateColor(Color color)
-	{
-		painter.SetColor(color);
-	}
+    private void SetTargetImage()
+    {
+        targetImage.texture = currentContext.visualFlag;
+    }
 
-	private void LoadResources()
-	{
-		contextDB = Resources.LoadAll<FlagContext>("FlagObjects");
-	}
+    private void SetText(string countryName)
+    {
+        countryNameTMP.text = countryName;
+    }
 
-	private void SetupButtons()
-	{
-		//Setup all colors
-		for (int i = 0; i < buttonHolster.childCount; i++)
-		{
-			var b = buttonHolster.GetChild(i);
+    public void DonePainting()
+    {
+        CompareFlags();
+        SetTargetImage();
+        DisplayResults();
+        donePaintingButton.SetActive(false);
+        nextRoundButton.SetActive(true);
+    }
 
-			if (i < currentContext.colors.Length)
-			{
-				b.gameObject.SetActive(true);
-				b.gameObject.GetComponent<ColorButton>().SetColor(currentContext.colors[i]);
-			}
-			else
-			{
-				b.gameObject.SetActive(false);
-			}
-		}
+    private void DisplayResults()
+    {
+        resultsHolster.SetActive(true);
+        resultsTextTMP.text = $"{similarityPercent}%";
+        resultsImage.SetActive(true);
+        interactionsHolster.SetActive(false);
+    }
 
-		//Set default color
-		buttonHolster.GetChild(0).GetComponent<ColorButton>().ClickedOn();
-	}
+    internal void UpdateColor(Color color)
+    {
+        painter.SetColor(color);
+    }
 
-	private void ClearCanvas()
-	{
-		painter.ClearCanvas();
-	}
+    private void Update()
+    {
+        undoButton.interactable = (painter.GetPaintStackSize() > 1);
+    }
 
-	public void NewRound()
-	{
-		LoadRandomFlag();
-		Setup(currentContext);
-		interactionsHolster.SetActive(true);
-		donePaintingButton.SetActive(true);
-		nextRoundButton.SetActive(false);
-	}
+    private void LoadResources()
+    {
+        contextDB = Resources.LoadAll<FlagContext>("FlagObjects");
+    }
 
-	public void ManualSetup()
-	{
-		if (!currentContext)
-		{
-			return;
-		}
+    private void SetupButtons()
+    {
+        //Setup all colors
+        for (int i = 0; i < buttonHolster.childCount; i++)
+        {
+            var b = buttonHolster.GetChild(i);
 
-		Setup(currentContext);
-	}
+            if (i < currentContext.colors.Length)
+            {
+                b.gameObject.SetActive(true);
+                b.gameObject.GetComponent<ColorButton>().SetColor(currentContext.colors[i]);
+            }
+            else
+            {
+                b.gameObject.SetActive(false);
+            }
+        }
 
-	public void LoadRandomFlag()
-	{
-		currentContext = contextDB[Random.Range(0, contextDB.Length)];
-	}
+        //Set default color
+        buttonHolster.GetChild(0).GetComponent<ColorButton>().ClickedOn();
+    }
 
-	public void CompareFlags()
-	{
-		var a = painter.testTexture;
-		var b = currentContext.visualFlag;
+    public void ClearCanvas()
+    {
+        painter.ClearCanvas();
+    }
 
-		if (a.width != b.width)
-		{
-			print("The images are not the same width");
-			return;
-		}
+    public void NewRound()
+    {
+        LoadRandomFlag();
+        Setup(currentContext);
+        interactionsHolster.SetActive(true);
+        donePaintingButton.SetActive(true);
+        nextRoundButton.SetActive(false);
+    }
 
-		if (a.height != b.height)
-		{
-			print("The images are not the same height");
-			return;
-		}
+    public void ManualSetup()
+    {
+        if (!currentContext)
+        {
+            return;
+        }
 
-		int matches = 0;
-		Color aColor;
-		Color bColor;
+        Setup(currentContext);
+    }
 
-		for (int width = 0; width < a.width; width++)
-		{
-			for (int height = 0; height < a.height; height++)
-			{
-				aColor = a.GetPixel(width, height);
-				bColor = b.GetPixel(width, height);
+    public void LoadRandomFlag()
+    {
+        currentContext = contextDB[GetRandomFlagIndex()];
+    }
 
-				if (a.GetPixel(width, height) == b.GetPixel(width, height))
-				{
-					matches++;
-				}
-			}
-		}
+    public int GetRandomFlagIndex()
+    {
+        var rngFlagIndex = Random.Range(0, contextDB.Length);
+        if (rngFlagIndex == lastFlagID)
+        {
+            rngFlagIndex = GetRandomFlagIndex();
+        }
 
-		var totalPixels = a.width * a.height;
-		float matchPercent = (float)matches / (float)totalPixels;
-		similarityPercent = (int)Mathf.Round(matchPercent * 100);
-		print($"The images were {similarityPercent}% similar. Sheesh");
-	}
+        lastFlagID = rngFlagIndex;
 
-	public void ThicknessSliderChanged()
-	{
-		painter.SetBrushThickness((int)thicknessSlider.value);
-		SetThicknessPreview();
-	}
+        return rngFlagIndex;
+    }
 
-	private void SetThicknessPreview()
-	{
-		var newSize = thicknessMaxSize * (thicknessSlider.value / thicknessSlider.maxValue);
-		thicknessPreview.localScale = new Vector3(newSize, newSize, 1);
-	}
+    public void CompareFlags()
+    {
+        var a = painter.mainPaintTexture;
+        var b = currentContext.visualFlag;
+
+        if (a.width != b.width)
+        {
+            print("The images are not the same width");
+            return;
+        }
+
+        if (a.height != b.height)
+        {
+            print("The images are not the same height");
+            return;
+        }
+
+        int matches = 0;
+        Color aColor;
+        Color bColor;
+
+        for (int width = 0; width < a.width; width++)
+        {
+            for (int height = 0; height < a.height; height++)
+            {
+                aColor = a.GetPixel(width, height);
+                bColor = b.GetPixel(width, height);
+
+                if (a.GetPixel(width, height) == b.GetPixel(width, height))
+                {
+                    matches++;
+                }
+            }
+        }
+
+        var totalPixels = a.width * a.height;
+        float matchPercent = (float)matches / (float)totalPixels;
+        similarityPercent = (int)Mathf.Round(matchPercent * 100);
+        print($"The images were {similarityPercent}% similar. Sheesh");
+    }
+
+    public void ThicknessSliderChanged()
+    {
+        painter.SetBrushThickness((int)thicknessSlider.value);
+        SetThicknessPreview();
+    }
+
+    private void SetThicknessPreview()
+    {
+        var newSize = thicknessMaxSize * (thicknessSlider.value / thicknessSlider.maxValue);
+        thicknessPreview.localScale = new Vector3(newSize, newSize, 1);
+    }
 }

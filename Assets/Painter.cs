@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Painter : MonoBehaviour
@@ -7,7 +8,12 @@ public class Painter : MonoBehaviour
 
     public Material planeMat;
 
-    public Texture2D testTexture;
+    public Texture2D mainPaintTexture;
+
+    public Stack<Texture2D> paintStack = new Stack<Texture2D>();
+
+    //debug
+    public List<Texture2D> debugList = new List<Texture2D>();
 
     public int textureWidth = 300;
     public int textureHeight = 200;
@@ -27,6 +33,8 @@ public class Painter : MonoBehaviour
 
     public int minDrawsOnDrag = 4;
     public int magnitudeAmp = 100;
+
+    private bool pixelsChanged = false;
 
     void Start()
     {
@@ -54,6 +62,12 @@ public class Painter : MonoBehaviour
         {
             holdingMouseButton = false;
             heldMouseButtonLastFrame = false;
+
+            if (pixelsChanged)
+            {
+                PushPaintStack();
+                pixelsChanged = false;
+            }
         }
 
         if (Input.GetKey(KeyCode.Mouse0))
@@ -70,7 +84,7 @@ public class Painter : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (testTexture != null)
+            if (mainPaintTexture != null)
             {
                 int xCoord = (int)(hit.textureCoord.x * textureWidth);
                 int yCoord = (int)(hit.textureCoord.y * textureHeight);
@@ -102,8 +116,9 @@ public class Painter : MonoBehaviour
 
     private void PaintPixels(int xCoord, int yCoord)
     {
-        testTexture.Circle(xCoord, yCoord, paintThickness, paintColor);
-        testTexture.Apply();
+        mainPaintTexture.Circle(xCoord, yCoord, paintThickness, paintColor);
+        mainPaintTexture.Apply();
+        pixelsChanged = true;
     }
 
     public void SetBrushThickness(int thickness)
@@ -113,26 +128,30 @@ public class Painter : MonoBehaviour
 
     private void AssignTexture()
     {
-        if (testTexture == null)
+        if (mainPaintTexture == null)
         {
             print("Make a texture first");
             return;
         }
 
-        planeMat.mainTexture = testTexture;
+        planeMat.mainTexture = mainPaintTexture;
     }
 
     private void CreateTexture()
     {
-        if (testTexture == null)
-        {
-            MakeTexture();
-        }
+        MakeTexture();
     }
 
     private void MakeTexture()
     {
-        testTexture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGBA32, false);
+        mainPaintTexture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGBA32, false);
+        ClearCanvas();
+    }
+
+    public void NewPainting()
+    {
+        ClearPaintStack();
+
         ClearCanvas();
     }
 
@@ -142,16 +161,50 @@ public class Painter : MonoBehaviour
         {
             for (int h = 0; h < textureHeight; h++)
             {
-                testTexture.SetPixel(w, h, Color.white);
+                mainPaintTexture.SetPixel(w, h, Color.white);
             }
         }
 
-        testTexture.Apply();
+        mainPaintTexture.Apply();
+
+        PushPaintStack();
     }
 
     public void SetColor(Color color)
     {
         paintColor = color;
     }
-}
 
+    private void PushPaintStack()
+    {
+        var newTexture = new Texture2D(textureWidth, textureHeight, TextureFormat.RGBA32, false);
+        newTexture.CopyPixels(mainPaintTexture);
+        newTexture.Apply();
+        paintStack.Push(newTexture);
+
+        debugList.Add(newTexture);
+    }
+
+    public void PopPaintStack()
+    {
+        if (paintStack.Count > 1)
+        {
+            paintStack.Pop();
+            mainPaintTexture.CopyPixels(paintStack.Peek());
+            mainPaintTexture.Apply();
+
+            debugList.RemoveAt(debugList.Count - 1);
+        }
+    }
+
+    private void ClearPaintStack()
+    {
+        paintStack.Clear();
+        debugList.Clear();
+    }
+
+    public int GetPaintStackSize()
+    {
+        return paintStack.Count;
+    }
+}
