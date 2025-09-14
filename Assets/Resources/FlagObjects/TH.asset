@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.1764706, g: 0.16470589, b: 0.2901961, a: 1}
   visualFlag: {fileID: 2800000, guid: 60f10e38b3a38d0498a518fedc7f6dde, type: 3}
   countryName: Thailand
+  difficulty: 1
+  countryContinent: 2

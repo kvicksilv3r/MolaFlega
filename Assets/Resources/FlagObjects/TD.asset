@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.77647066, g: 0.04705883, b: 0.18823531, a: 1}
   visualFlag: {fileID: 2800000, guid: 7f43a63bbaa08624ab9a74351b4c713d, type: 3}
   countryName: Chad
+  difficulty: 1
+  countryContinent: 5

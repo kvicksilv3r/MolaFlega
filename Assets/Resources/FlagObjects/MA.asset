@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 0.003921569, g: 0.38431376, b: 0.20000002, a: 1}
   visualFlag: {fileID: 2800000, guid: 8785c0fa8cf8a25448465707f9acba0f, type: 3}
   countryName: Morocco
+  difficulty: 1
+  countryContinent: 5

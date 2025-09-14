@@ -16,6 +16,7 @@ MonoBehaviour:
   - {r: 0, g: 0.14901961, b: 0.32941177, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.80784315, g: 0.06666667, b: 0.14901961, a: 1}
-  comparisonFlag: {fileID: 2800000, guid: 5dc177a06e06d9d45a5d8bc91ff80b88, type: 3}
   visualFlag: {fileID: 2800000, guid: ffb17dcaeac21a244b433dd889b81e25, type: 3}
   countryName: France
+  difficulty: 0
+  countryContinent: 1

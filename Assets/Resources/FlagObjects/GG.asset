@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.97647065, g: 0.86666673, b: 0.08627451, a: 1}
   visualFlag: {fileID: 2800000, guid: 63c5b5691836e9140bbece81865eef26, type: 3}
   countryName: Guernsey
+  difficulty: 2
+  countryContinent: 1

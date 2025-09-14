@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.30588236, g: 0.35686275, b: 0.19215688, a: 1}
   visualFlag: {fileID: 2800000, guid: 080eadab5e5046e40a407ce6642ee59e, type: 3}
   countryName: Cyprus
+  difficulty: 1
+  countryContinent: 1

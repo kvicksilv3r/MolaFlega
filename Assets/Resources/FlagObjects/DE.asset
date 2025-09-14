@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 0.80784315, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: 126feb8e0c1ec26429e9f2e0d56985eb, type: 3}
   countryName: Germany
+  difficulty: 0
+  countryContinent: 1

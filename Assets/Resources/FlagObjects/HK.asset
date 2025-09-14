@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 0e14fc7e0834a1043abb75b8377c63bb, type: 3}
   countryName: Hong Kong
+  difficulty: 2
+  countryContinent: 2

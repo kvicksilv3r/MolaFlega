@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0, g: 0.4784314, b: 0.2392157, a: 1}
   visualFlag: {fileID: 2800000, guid: 7df401e3cba75904d86362056f065a59, type: 3}
   countryName: Jordan
+  difficulty: 1
+  countryContinent: 2

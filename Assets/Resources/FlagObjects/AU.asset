@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: e3bc141ce6c5bbb43a73c5f200134c00, type: 3}
   countryName: Australia
+  difficulty: 1
+  countryContinent: 6

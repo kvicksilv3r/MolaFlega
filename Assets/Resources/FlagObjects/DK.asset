@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: f0f1edf4ebd97f14f8394e484e7fe962, type: 3}
   countryName: Denmark
+  difficulty: 0
+  countryContinent: 1

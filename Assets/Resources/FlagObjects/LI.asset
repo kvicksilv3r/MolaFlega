@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 0.8470589, b: 0.2392157, a: 1}
   visualFlag: {fileID: 2800000, guid: dbc70a8b6798d0d4198bcc293bcbd1c0, type: 3}
   countryName: Liechtenstein
+  difficulty: 1
+  countryContinent: 1

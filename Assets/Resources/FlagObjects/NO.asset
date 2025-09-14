@@ -16,6 +16,7 @@ MonoBehaviour:
   - {r: 0, g: 0.1254902, b: 0.35686275, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.7294118, g: 0.047058824, b: 0.18431373, a: 1}
-  comparisonFlag: {fileID: 2800000, guid: 01fb1d955cccbd2429681c3a6b0c7bd9, type: 3}
   visualFlag: {fileID: 2800000, guid: 5fc52913c01869e4bbd134143e17bf4e, type: 3}
   countryName: Norway
+  difficulty: 1
+  countryContinent: 1

@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0, g: 0.6392157, b: 0.8666667, a: 1}
   visualFlag: {fileID: 2800000, guid: 10ae32662eb5eff43a95fcd5455b99d3, type: 3}
   countryName: Tanzania
+  difficulty: 1
+  countryContinent: 5

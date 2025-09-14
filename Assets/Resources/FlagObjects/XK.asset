@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: af6676f5fa9fc6f41b8215c452ab6260, type: 3}
   countryName: Kosovo
+  difficulty: 2
+  countryContinent: 1

@@ -18,3 +18,4 @@ MonoBehaviour:
   - {r: 0.9960785, g: 0, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: 0dc279ea53995494eb600e0404d03bfe, type: 3}
   countryName: Taiwan
+  difficulty: 1

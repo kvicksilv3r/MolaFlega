@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 0.23529412}
   visualFlag: {fileID: 2800000, guid: cc1d11b92d8a0084b9f1450c26e16854, type: 3}
   countryName: Nepal
+  difficulty: 2
+  countryContinent: 2

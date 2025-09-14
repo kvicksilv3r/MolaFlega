@@ -19,3 +19,4 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: cd19e1cf9e0f4fe41977ce29b4740b90, type: 3}
   countryName: Malaysia
+  difficulty: 1

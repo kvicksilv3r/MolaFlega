@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: b586a6f3782cbaf498bf60b232144f80, type: 3}
   countryName: Turkey
+  difficulty: 1
+  countryContinent: 2

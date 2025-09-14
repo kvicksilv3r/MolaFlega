@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0.9294118, g: 0.7254902, b: 0.18039216, a: 1}
   visualFlag: {fileID: 2800000, guid: e3cd1aba05dde4346b6ecda80bf74e4e, type: 3}
   countryName: Serbia
+  difficulty: 1
+  countryContinent: 1

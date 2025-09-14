@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: a8789bd13c7ec694594efe9f718cc8cd, type: 3}
   countryName: Timor-Leste
+  difficulty: 2
+  countryContinent: 2

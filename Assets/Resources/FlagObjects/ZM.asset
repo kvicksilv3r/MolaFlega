@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0.93725497, g: 0.4901961, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: eda43c987a7f0c94fac53fe2f26468e2, type: 3}
   countryName: Zambia
+  difficulty: 2
+  countryContinent: 5

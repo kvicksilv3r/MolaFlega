@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: ae0449df342ccdc4e81cefd4425e437e, type: 3}
   countryName: Portugal
+  difficulty: 1
+  countryContinent: 1

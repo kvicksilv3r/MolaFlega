@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.8078432, g: 0.06666667, b: 0.14901961, a: 1}
   visualFlag: {fileID: 2800000, guid: d8689deb2858ab74fb17f77b49c8895c, type: 3}
   countryName: Mali
+  difficulty: 2
+  countryContinent: 5

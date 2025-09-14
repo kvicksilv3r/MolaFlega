@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 9351fe064f68842449b80a70b0fe9242, type: 3}
   countryName: Georgia
+  difficulty: 1
+  countryContinent: 1

@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.227451, g: 0.45882356, b: 0.7686275, a: 1}
   visualFlag: {fileID: 2800000, guid: 88ad4fb64148898469ca4e26ba3ed1c5, type: 3}
   countryName: Gabon
+  difficulty: 2
+  countryContinent: 5

@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0, g: 0.6313726, b: 0.87058824, a: 1}
   visualFlag: {fileID: 2800000, guid: e0aad40df01142540b8338452ff15585, type: 3}
   countryName: Luxembourg
+  difficulty: 1
+  countryContinent: 1

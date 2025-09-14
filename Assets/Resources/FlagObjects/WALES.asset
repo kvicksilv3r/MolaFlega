@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.78431374, g: 0.0627451, b: 0.18039216, a: 1}
   visualFlag: {fileID: 2800000, guid: 4c511e51698d3f440ac1271f88765013, type: 3}
   countryName: Wales
+  difficulty: 2
+  countryContinent: 1

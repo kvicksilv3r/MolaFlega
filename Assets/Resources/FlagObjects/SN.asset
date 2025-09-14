@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.89019614, g: 0.10588236, b: 0.13725491, a: 1}
   visualFlag: {fileID: 2800000, guid: 4178c240aa333bb4c9db033c987d5dd0, type: 3}
   countryName: Senegal
+  difficulty: 1
+  countryContinent: 5

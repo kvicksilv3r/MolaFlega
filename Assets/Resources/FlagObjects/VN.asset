@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: 97686fd11b16cb948ba6dcc34c122a30, type: 3}
   countryName: Vietnam
+  difficulty: 0
+  countryContinent: 2

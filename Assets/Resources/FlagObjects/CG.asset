@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.854902, g: 0.10196079, b: 0.20784315, a: 1}
   visualFlag: {fileID: 2800000, guid: e10528a0f100f804a8557decebafb7f1, type: 3}
   countryName: Congo
+  difficulty: 2
+  countryContinent: 5

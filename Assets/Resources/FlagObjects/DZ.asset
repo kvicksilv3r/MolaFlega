@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 02493e4589c951e4da5ee9e474e6331f, type: 3}
   countryName: Algeria
+  difficulty: 2
+  countryContinent: 5

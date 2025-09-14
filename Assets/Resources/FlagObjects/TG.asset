@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 1, g: 0.8078432, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: 38effc8a5c494fe4bbf218012aa4779e, type: 3}
   countryName: Togo
+  difficulty: 2
+  countryContinent: 5

@@ -17,3 +17,4 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 59d59a9790e96aa49910ec8a67172e34, type: 3}
   countryName: Antarctica
+  difficulty: 2

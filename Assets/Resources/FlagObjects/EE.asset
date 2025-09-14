@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 2c7d556470523c94989ed18be9c36827, type: 3}
   countryName: Estonia
+  difficulty: 0
+  countryContinent: 1

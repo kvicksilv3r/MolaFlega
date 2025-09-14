@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.050980397, g: 0.6901961, b: 0.16862746, a: 1}
   visualFlag: {fileID: 2800000, guid: 6e0c99358ee3e6441b34d1edad9f819b, type: 3}
   countryName: Niger
+  difficulty: 1
+  countryContinent: 5

@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: e5b6e1d0fe17f394e9dcd3629e087ead, type: 3}
   countryName: South Korea
+  difficulty: 0
+  countryContinent: 2

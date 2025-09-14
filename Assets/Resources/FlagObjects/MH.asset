@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.86666673, g: 0.45882356, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: 4ad8271d242004a4f9844102c55dc856, type: 3}
   countryName: Marshall Islands
+  difficulty: 2
+  countryContinent: 6

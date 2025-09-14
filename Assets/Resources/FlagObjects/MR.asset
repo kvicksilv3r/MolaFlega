@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 0.8431373, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: af956ecae8d97b249a644c31adfee13f, type: 3}
   countryName: Mauritania
+  difficulty: 2
+  countryContinent: 5

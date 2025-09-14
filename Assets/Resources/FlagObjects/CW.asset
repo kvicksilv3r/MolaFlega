@@ -18,3 +18,4 @@ MonoBehaviour:
   - {r: 0.97647065, g: 0.909804, b: 0.078431375, a: 1}
   visualFlag: {fileID: 2800000, guid: 1a17f95ae553c984789b3cbe04bc1da1, type: 3}
   countryName: "Cura\xE7ao"
+  difficulty: 2

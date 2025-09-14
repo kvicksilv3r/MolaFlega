@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0, g: 0.61960787, b: 0.3764706, a: 1}
   visualFlag: {fileID: 2800000, guid: 697a4966f217b4246bac923cb5612aa7, type: 3}
   countryName: Ivory Coast
+  difficulty: 1
+  countryContinent: 5

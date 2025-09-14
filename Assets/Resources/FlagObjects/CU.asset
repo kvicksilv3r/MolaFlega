@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0, g: 0.16470589, b: 0.56078434, a: 1}
   visualFlag: {fileID: 2800000, guid: bd1bd81fd0169a84693f65de7cbc1b2e, type: 3}
   countryName: Cuba
+  difficulty: 1
+  countryContinent: 4

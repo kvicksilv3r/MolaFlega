@@ -18,3 +18,4 @@ MonoBehaviour:
   - {r: 0.9333334, g: 0.10980393, b: 0.14509805, a: 1}
   visualFlag: {fileID: 2800000, guid: a22e49b650da9c9448d6bf3b37872eee, type: 3}
   countryName: Slovakia
+  difficulty: 1

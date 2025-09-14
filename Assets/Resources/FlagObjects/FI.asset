@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 3c90d04c2b4b5fb4c9704e9fc70a8587, type: 3}
   countryName: Finland
+  difficulty: 0
+  countryContinent: 1

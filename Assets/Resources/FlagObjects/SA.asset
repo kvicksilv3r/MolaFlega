@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 24851fba8b998ce41add301f37bbb07b, type: 3}
   countryName: Saudi Arabia
+  difficulty: 1
+  countryContinent: 2

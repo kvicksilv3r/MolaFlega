@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.1882353, g: 0.14901961, b: 0.5058824, a: 1}
   visualFlag: {fileID: 2800000, guid: be428ce0682d02048bdf087e970acb6b, type: 3}
   countryName: Brazil
+  difficulty: 1
+  countryContinent: 3

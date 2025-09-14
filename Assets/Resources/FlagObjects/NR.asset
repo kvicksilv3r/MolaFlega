@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: fe1cf293c0cfdd1498979ad34d8698a5, type: 3}
   countryName: Nauru
+  difficulty: 2
+  countryContinent: 6

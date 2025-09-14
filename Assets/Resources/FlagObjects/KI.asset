@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0.09411766, g: 0.18823531, b: 0.43921572, a: 1}
   visualFlag: {fileID: 2800000, guid: 5af9d0c63ceef064bbccff3e110b0c84, type: 3}
   countryName: Kiribati
+  difficulty: 2
+  countryContinent: 6

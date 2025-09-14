@@ -18,3 +18,4 @@ MonoBehaviour:
   - {r: 0.003921569, g: 0.12941177, b: 0.41176474, a: 1}
   visualFlag: {fileID: 2800000, guid: 0f6137122fd01e04690b86ee456691be, type: 3}
   countryName: New Zealand
+  difficulty: 1

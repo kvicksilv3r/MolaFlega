@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: fd85c0239ea6e6c4d95b9e6a8b309448, type: 3}
   countryName: Iceland
+  difficulty: 1
+  countryContinent: 1

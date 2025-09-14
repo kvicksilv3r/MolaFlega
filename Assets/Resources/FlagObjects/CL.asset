@@ -16,6 +16,7 @@ MonoBehaviour:
   - {r: 0, g: 0.19607843, b: 0.627451, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.85490197, g: 0.16078432, b: 0.10980392, a: 1}
-  comparisonFlag: {fileID: 2800000, guid: f3c4ecf5fc4d0a84694846764423e923, type: 3}
   visualFlag: {fileID: 2800000, guid: e58f0368b1cda9e4d9fa9079ee1f7455, type: 3}
   countryName: Chile
+  difficulty: 1
+  countryContinent: 3

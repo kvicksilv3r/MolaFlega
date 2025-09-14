@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 0.7568628, g: 0, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: b5deec578c6bb2e48ae6835db8b8a61b, type: 3}
   countryName: Tonga
+  difficulty: 2
+  countryContinent: 6

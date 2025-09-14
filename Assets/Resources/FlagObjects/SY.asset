@@ -18,4 +18,5 @@ MonoBehaviour:
   - {r: 0, g: 0.4784314, b: 0.2392157, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: fd43940a328bb0745ae0d5bc3ab587a8, type: 3}
-  countryName: Syrian Arab Republic
+  countryName: Syria
+  difficulty: 1

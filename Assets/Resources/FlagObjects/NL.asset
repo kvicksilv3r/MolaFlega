@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.12941177, g: 0.27450982, b: 0.54509807, a: 1}
   visualFlag: {fileID: 2800000, guid: 323be78fc9b639b438b89967eea641dc, type: 3}
   countryName: Netherlands
+  difficulty: 0
+  countryContinent: 1

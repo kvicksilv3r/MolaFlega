@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0.058823533, g: 0.2784314, b: 0.6862745, a: 1}
   visualFlag: {fileID: 2800000, guid: c917497f195c13142beb887988e86323, type: 3}
   countryName: Ethiopia
+  difficulty: 2
+  countryContinent: 5

@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0, g: 0.44705886, b: 0.77647066, a: 1}
   visualFlag: {fileID: 2800000, guid: 789a274f07487154f97a5596f6d66c66, type: 3}
   countryName: Sierra Leone
+  difficulty: 2
+  countryContinent: 5

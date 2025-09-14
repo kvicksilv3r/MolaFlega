@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.027450982, g: 0.13725491, b: 0.34117648, a: 1}
   visualFlag: {fileID: 2800000, guid: 48a11714d1273dd4ba3efb0c224155ff, type: 3}
   countryName: Panama
+  difficulty: 1
+  countryContinent: 4

@@ -9,6 +9,8 @@ public class FlagContext : ScriptableObject
     public Color[] colors = new Color[] { Color.white };
     public Texture2D visualFlag;
     public string countryName;
+    public CountryDifficulty difficulty;
+    public Continent countryContinent;
 
 #if UNITY_EDITOR
     private void Awake()
@@ -42,7 +44,9 @@ public class FlagContext : ScriptableObject
                 .Select(c => c.Name)
                 .FirstOrDefault();
         }
+        EditorUtility.SetDirty(this);
     }
+
 #endif
 }
 

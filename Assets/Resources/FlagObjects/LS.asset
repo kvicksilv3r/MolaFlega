@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: 6a3042463602f66479f2114dea5bc596, type: 3}
   countryName: Lesotho
+  difficulty: 1
+  countryContinent: 5

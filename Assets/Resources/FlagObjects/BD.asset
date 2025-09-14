@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 0.9568628, g: 0.16470589, b: 0.25490198, a: 1}
   visualFlag: {fileID: 2800000, guid: f78574725e70fd64e872be3f6bc00d70, type: 3}
   countryName: Bangladesh
+  difficulty: 0
+  countryContinent: 2

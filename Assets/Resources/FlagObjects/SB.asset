@@ -19,3 +19,4 @@ MonoBehaviour:
   - {r: 0.12941177, g: 0.35686275, b: 0.20000002, a: 1}
   visualFlag: {fileID: 2800000, guid: 7c27b1149f5504f44a1e9129b4a9b853, type: 3}
   countryName: Solomon Islands
+  difficulty: 2

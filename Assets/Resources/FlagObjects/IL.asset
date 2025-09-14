@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 0, g: 0.21960786, b: 0.72156864, a: 1}
   visualFlag: {fileID: 2800000, guid: f9d2bd346bae8db489e929d59f118da3, type: 3}
   countryName: Israel
+  difficulty: 0
+  countryContinent: 2

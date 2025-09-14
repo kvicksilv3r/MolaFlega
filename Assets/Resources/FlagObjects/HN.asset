@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: e64285ae2f73cb447aecc6f90290aaff, type: 3}
   countryName: Honduras
+  difficulty: 1
+  countryContinent: 4

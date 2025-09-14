@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0.8078432, g: 0.06666667, b: 0.14901961, a: 1}
   visualFlag: {fileID: 2800000, guid: 2be70960979929843b946ad12aa4af4a, type: 3}
   countryName: Kuwait
+  difficulty: 2
+  countryContinent: 2

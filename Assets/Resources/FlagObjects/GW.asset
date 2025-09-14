@@ -19,3 +19,5 @@ MonoBehaviour:
   - {r: 0.003921569, g: 0, b: 0, a: 1}
   visualFlag: {fileID: 2800000, guid: 49032f1f4764f19449d411a9f6850e9e, type: 3}
   countryName: Guinea-Bissau
+  difficulty: 2
+  countryContinent: 5
