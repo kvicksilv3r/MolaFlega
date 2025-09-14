@@ -1,9 +1,6 @@
-using System;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using Unity.Android.Gradle;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FlagContext", menuName = "Scriptable Objects/New FlagContext")]
@@ -24,7 +21,7 @@ public class FlagContext : ScriptableObject
             if (flag != null)
             {
                 visualFlag = flag;
-                this.SetDirty();
+                EditorUtility.SetDirty(this);
             }
         }
 

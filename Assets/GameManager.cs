@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject nextRoundButton;
 
     public GameObject interactionsHolster;
+    public GameObject footer;
 
     public float canvasRefWidth;
     public float canvasRefHeight;
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     public bool forceLoadCountryButton = false;
     public FlagContext manualCountrySelection;
+
 
     private void Awake()
     {
@@ -96,6 +99,11 @@ public class GameManager : MonoBehaviour
         painter.NewPainting();
     }
 
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void SetTargetImage()
     {
         targetImage.texture = currentContext.visualFlag;
@@ -121,6 +129,7 @@ public class GameManager : MonoBehaviour
         resultsTextTMP.text = $"{similarityPercent}%";
         resultsImage.SetActive(true);
         interactionsHolster.SetActive(false);
+        footer.SetActive(false);
     }
 
     internal void UpdateColor(Color color)
@@ -176,6 +185,7 @@ public class GameManager : MonoBehaviour
         interactionsHolster.SetActive(true);
         donePaintingButton.SetActive(true);
         nextRoundButton.SetActive(false);
+        footer.SetActive(true);
     }
 
 
