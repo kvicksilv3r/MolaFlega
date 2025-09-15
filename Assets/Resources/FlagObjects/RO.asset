@@ -18,3 +18,5 @@ MonoBehaviour:
   - {r: 0.80784315, g: 0.06666667, b: 0.14901961, a: 1}
   visualFlag: {fileID: 2800000, guid: 4e914c7b14b86b84aab5595287772aeb, type: 3}
   countryName: Romania
+  difficulty: 0
+  countryContinent: 1

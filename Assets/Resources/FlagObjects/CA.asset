@@ -17,3 +17,5 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   visualFlag: {fileID: 2800000, guid: 67649559605d8b7499ec8909f285c4be, type: 3}
   countryName: Canada
+  difficulty: 0
+  countryContinent: 4

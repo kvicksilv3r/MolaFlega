@@ -18,3 +18,4 @@ MonoBehaviour:
   visualFlag: {fileID: 2800000, guid: 40af6d5ee98f5e0428b9bb218818620c, type: 3}
   countryName: Greenland
   difficulty: 1
+  countryContinent: 4

@@ -19,3 +19,4 @@ MonoBehaviour:
   visualFlag: {fileID: 2800000, guid: 6b3bc70edf995284e9ca6688361b9280, type: 3}
   countryName: United States of America
   difficulty: 1
+  countryContinent: 4

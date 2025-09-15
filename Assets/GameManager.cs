@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     private FlagContext[] contextDB;
+    private FlagContext[] shuffledSubDB;
+
+    private int currentContextIndex = 0;
 
     public Transform thicknessPreview;
 
@@ -34,6 +38,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject interactionsHolster;
     public GameObject footer;
+
+    public GameObject menuCanvas;
+    public GameObject gameCanvas;
 
     public float canvasRefWidth;
     public float canvasRefHeight;
@@ -55,6 +62,7 @@ public class GameManager : MonoBehaviour
     public bool forceLoadCountryButton = false;
     public FlagContext manualCountrySelection;
 
+    public List<Continent> continentFilter = new List<Continent>();
 
     private void Awake()
     {
@@ -67,12 +75,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-    }
-
-    void Start()
-    {
-        painter.InitPainter(300, 200);
-        LoadResources();
     }
 
     public void Setup(FlagContext context)
@@ -176,7 +178,8 @@ public class GameManager : MonoBehaviour
 
     public void NewRound()
     {
-        LoadRandomFlag();
+        //LoadRandomFlag();
+        LoadNextFlag();
 
         SetCanvasPhysicalSize();
         SetResultsPhysicalSize();
@@ -187,7 +190,18 @@ public class GameManager : MonoBehaviour
         nextRoundButton.SetActive(false);
         footer.SetActive(true);
     }
+    private void LoadNextFlag()
+    {
+        var index = ((currentContextIndex++) % shuffledSubDB.Length);
+        currentContext = shuffledSubDB[index];
+    }
 
+    private void SetupFlagOrder()
+    {
+        shuffledSubDB = contextDB.Where(c => continentFilter.Contains(c.countryContinent)).ToArray();
+        System.Random rand = new System.Random();
+        shuffledSubDB = shuffledSubDB.OrderBy(c => rand.Next()).ToArray();
+    }
 
     private void SetCanvasPhysicalSize()
     {
@@ -218,15 +232,18 @@ public class GameManager : MonoBehaviour
 
     public void LoadRandomFlag()
     {
-        currentContext = contextDB[GetRandomFlagIndex()];
+        var subDB = contextDB.Where(c => continentFilter.Contains(c.countryContinent)).ToList();
+        currentContext = subDB[GetRandomFlagIndex(subDB.Count)];
+        //currentContext = contextDB[GetRandomFlagIndex(contextDB.Length)];
     }
 
-    public int GetRandomFlagIndex()
+    public int GetRandomFlagIndex(int maxIndex)
     {
-        var rngFlagIndex = Random.Range(0, contextDB.Length);
+        var rngFlagIndex = Random.Range(0, maxIndex);
+
         if (rngFlagIndex == lastFlagID)
         {
-            rngFlagIndex = GetRandomFlagIndex();
+            rngFlagIndex = GetRandomFlagIndex(maxIndex);
         }
 
         lastFlagID = rngFlagIndex;
@@ -310,6 +327,23 @@ public class GameManager : MonoBehaviour
         thicknessPreview.localScale = new Vector3(newSize, newSize, 1);
     }
 
+    public bool ToggleContinent(Continent continent)
+    {
+        if (continentFilter.Contains(continent))
+        {
+            continentFilter.Remove(continent);
+            return false;
+        }
+
+        continentFilter.Add(continent);
+        return true;
+    }
+
+    public bool ContainsContinent(Continent continent)
+    {
+        return continentFilter.Contains(continent);
+    }
+
     private void OnValidate()
     {
         if (forceLoadCountryButton && manualCountrySelection != null)
@@ -326,5 +360,23 @@ public class GameManager : MonoBehaviour
             donePaintingButton.SetActive(true);
             nextRoundButton.SetActive(false);
         }
+    }
+
+    public void StartGame()
+    {
+        if (continentFilter.Count == 0)
+        {
+            return;
+        }
+
+        gameCanvas.SetActive(true);
+        paintCanvas.SetActive(true);
+        menuCanvas.SetActive(false);
+
+        painter.InitPainter(300, 200);
+        LoadResources();
+        SetupFlagOrder();
+
+        NewRound();
     }
 }

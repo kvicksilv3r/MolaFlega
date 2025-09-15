@@ -19,3 +19,4 @@ MonoBehaviour:
   visualFlag: {fileID: 2800000, guid: 4d545c93015aa6548b36fd3ab9a9cdb4, type: 3}
   countryName: Burkina Faso
   difficulty: 2
+  countryContinent: 5
